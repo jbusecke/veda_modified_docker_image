@@ -8,6 +8,8 @@ dependencies:
   - maturin
   - gcc_linux-64
   - gxx_linux-64
+  - libgcc-devel_linux-64
+  - libstdcxx-ng
   - libgcc-ng
   - compilers
   - binutils
