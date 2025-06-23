@@ -5,4 +5,11 @@ USER root
 
 RUN apt-get update -qq --yes > /dev/null && \
     apt-get install --yes -qq \
+      build-essential \
       gcc > /dev/null
+
+USER ${NB_USER}
+
+# Install packages
+COPY environment.yml /tmp/
+RUN mamba env update -p ${CONDA_DIR} -f /tmp/environment.yml && mamba clean -afy
